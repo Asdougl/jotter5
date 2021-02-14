@@ -1,0 +1,24 @@
+$themes: (
+    light: (
+        backgroundColor: #ffffff,
+        textColor: #000000,
+        inputPrimary: #e2e2e2,
+        inputSecondary: #f0f0f0,
+        cardColor:#f7f7f7,
+    ),
+    dark: (
+        backgroundColor: #222222,
+        textColor: #dddddd,
+        inputPrimary: #313131,
+        inputSecondary: #444444,
+        cardColor:#353535,
+    )
+);
+
+@each $theme, $themeMap in $themes {
+    .theme-#{$theme} {
+        @each $variable, $value in $themeMap {
+            --#{$variable}: #{$value};
+        }
+    }
+}
